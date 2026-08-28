@@ -1,105 +1,52 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+body {
+    background-color: #f4f4f4;
+    font-family: Arial;
+    margin: 0;
 }
 
-body{
-    display:flex;
-    flex-direction:column;
-    min-height:100vh;
-    background:#f4f4f4;
-    font-family:Arial, Helvetica, sans-serif;
+h1 {
+    background-color: #2f5d50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
 }
 
-.cabecalho{
-    background:#2f5d50;
-    padding:15px 25px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+h2 {
+    color: #2f5d50;
+    text-align: center;
+    margin-top: 30px;
 }
 
-h1{
-    color:#fff;
-    font-size:28px;
+h3 {
+    color: #2f5d50;
 }
 
-.cabecalho-link{
-    color:#fff;
-    text-decoration:none;
+p {
+    font-size: 16px;
 }
 
-main{
-    flex:1;
-    padding:30px;
+img {
+    width: 300px;
+    height: 200px;
 }
 
-h2{
-    text-align:center;
-    margin-bottom:30px;
-    color:#2f5d50;
+main {
+    text-align: center;
 }
 
-.cartoes{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
+.cartao {
+    background-color: white;
+    width: 320px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #ccc;
 }
 
-.cartao{
-    width:280px;
-    height:340px;
-    perspective:1000px;
-}
-
-.cartao-interno{
-    position:relative;
-    width:100%;
-    height:100%;
-    transition:transform .8s;
-    transform-style:preserve-3d;
-}
-
-.cartao:hover .cartao-interno{
-    transform:rotateY(180deg);
-}
-
-.cartao-frente,
-.cartao-verso{
-    position:absolute;
-    width:100%;
-    height:100%;
-    background:#fff;
-    border-radius:12px;
-    overflow:hidden;
-    box-shadow:0 6px 12px rgba(0,0,0,.2);
-    backface-visibility:hidden;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
-
-.cartao-verso{
-    transform:rotateY(180deg);
-}
-
-.cartao-imagem{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
-
-.cartao-frente p,
-.cartao-verso p{
-    padding:15px;
-    text-align:center;
-}
-
-footer{
-    background:#2f5d50;
-    color:#fff;
-    text-align:center;
-    padding:15px;
+footer {
+    background-color: #2f5d50;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
 }

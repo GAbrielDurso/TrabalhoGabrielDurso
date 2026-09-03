@@ -1,52 +1,974 @@
-body {
-    background-color: #f4f4f4;
-    font-family: Arial;
+/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;/* =========================
+   CONFIGURAÇÕES GERAIS
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-h1 {
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
     background-color: #2f5d50;
     color: white;
-    text-align: center;
     padding: 20px;
-    margin: 0;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
 }
+
+header h1 {
+    font-size: 38px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 17px;
+    color: #e8f1ee;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+nav {
+    background-color: #23483d;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 14px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #d4af37;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+main > p {
+    max-width: 700px;
+    margin: 0 auto 35px;
+    font-size: 18px;
+    color: #555;
+}
+
+
+/* =========================
+   TÍTULOS
+========================= */
 
 h2 {
     color: #2f5d50;
     text-align: center;
-    margin-top: 30px;
+    font-size: 32px;
+    margin: 35px 0 25px;
 }
 
 h3 {
     color: #2f5d50;
+    font-size: 23px;
+    margin-bottom: 12px;
 }
 
 p {
     font-size: 16px;
 }
 
-img {
-    width: 300px;
-    height: 200px;
-}
 
-main {
-    text-align: center;
+/* =========================
+   CARTÕES
+========================= */
+
+.cartoes {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 30px;
 }
 
 .cartao {
     background-color: white;
     width: 320px;
-    margin: 20px auto;
-    padding: 15px;
-    border: 1px solid #ccc;
+    min-height: 420px;
+    padding: 0 0 25px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+    transition: all 0.35s ease;
 }
 
-footer {
+.cartao:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================
+   IMAGENS DOS CARTÕES
+========================= */
+
+.cartao img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.cartao:hover img {
+    transform: scale(1.05);
+}
+
+.cartao h3 {
+    margin: 20px 20px 10px;
+}
+
+.cartao p {
+    margin: 0 20px;
+    color: #666;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.botao {
+    display: inline-block;
     background-color: #2f5d50;
     color: white;
-    text-align: center;
-    padding: 15px;
+    padding: 13px 25px;
+    margin-top: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background-color: #d4af37;
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   GALERIA
+========================= */
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
     margin-top: 30px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.galeria img:hover {
+    transform: scale(1.04);
+    filter: brightness(80%);
+}
+
+
+/* =========================
+   ÁREA DE CONTATO
+========================= */
+
+.contato {
+    background-color: #2f5d50;
+    color: white;
+    padding: 60px 20px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.contato h2 {
+    color: white;
+}
+
+.contato p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.contato .botao {
+    background-color: #d4af37;
+}
+
+.contato .botao:hover {
+    background-color: white;
+    color: #2f5d50;
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+form {
+    max-width: 500px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #2f5d50;
+    box-shadow: 0 0 5px rgba(47, 93, 80, 0.3);
+}
+
+textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 35px;
+    border-radius: 15px;
+    position: relative;
+    animation: aparecer 0.4s ease;
+}
+
+.modal-content h2 {
+    margin-top: 10px;
+}
+
+.fechar {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #555;
+}
+
+.fechar:hover {
+    color: #d4af37;
+}
+
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+#topo {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #d4af37;
+    color: white;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: none;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+
+    transition: 0.3s;
+}
+
+#topo:hover {
+    transform: translateY(-5px);
+    background-color: #2f5d50;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    background-color: #23483d;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+footer p {
+    margin: 5px 0;
+    color: #e5e5e5;
+}
+
+
+/* =========================
+   MODO ESCURO
+========================= */
+
+body.dark {
+    background-color: #121212;
+    color: #eee;
+}
+
+body.dark main > p {
+    color: #ccc;
+}
+
+body.dark .cartao {
+    background-color: #1e1e1e;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .cartao p {
+    color: #bbb;
+}
+
+body.dark h2,
+body.dark h3 {
+    color: #6fa996;
+}
+
+body.dark .modal-content {
+    background-color: #222;
+    color: white;
+}
+
+body.dark input,
+body.dark textarea {
+    background-color: #333;
+    color: white;
+    border-color: #555;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cartoes {
+        gap: 20px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    main {
+        padding: 30px 15px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .cartao {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria img {
+        height: 250px;
+    }
+}
+
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CABEÇALHO
+========================= */
+
+header {
+    background-color: #2f5d50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+header h1 {
+    font-size: 38px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 17px;
+    color: #e8f1ee;
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+nav {
+    background-color: #23483d;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 14px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #d4af37;
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+========================= */
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+main > p {
+    max-width: 700px;
+    margin: 0 auto 35px;
+    font-size: 18px;
+    color: #555;
+}
+
+
+/* =========================
+   TÍTULOS
+========================= */
+
+h2 {
+    color: #2f5d50;
+    text-align: center;
+    font-size: 32px;
+    margin: 35px 0 25px;
+}
+
+h3 {
+    color: #2f5d50;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+p {
+    font-size: 16px;
+}
+
+
+/* =========================
+   CARTÕES
+========================= */
+
+.cartoes {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.cartao {
+    background-color: white;
+    width: 320px;
+    min-height: 420px;
+    padding: 0 0 25px;
+    border-radius: 15px;
+    overflow: hidden;
+    border: none;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.10);
+    transition: all 0.35s ease;
+}
+
+.cartao:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================
+   IMAGENS DOS CARTÕES
+========================= */
+
+.cartao img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.cartao:hover img {
+    transform: scale(1.05);
+}
+
+.cartao h3 {
+    margin: 20px 20px 10px;
+}
+
+.cartao p {
+    margin: 0 20px;
+    color: #666;
+}
+
+
+/* =========================
+   BOTÕES
+========================= */
+
+.botao {
+    display: inline-block;
+    background-color: #2f5d50;
+    color: white;
+    padding: 13px 25px;
+    margin-top: 20px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background-color: #d4af37;
+    transform: scale(1.05);
+}
+
+
+/* =========================
+   GALERIA
+========================= */
+
+.galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.galeria img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.galeria img:hover {
+    transform: scale(1.04);
+    filter: brightness(80%);
+}
+
+
+/* =========================
+   ÁREA DE CONTATO
+========================= */
+
+.contato {
+    background-color: #2f5d50;
+    color: white;
+    padding: 60px 20px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.contato h2 {
+    color: white;
+}
+
+.contato p {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.contato .botao {
+    background-color: #d4af37;
+}
+
+.contato .botao:hover {
+    background-color: white;
+    color: #2f5d50;
+}
+
+
+/* =========================
+   FORMULÁRIO
+========================= */
+
+form {
+    max-width: 500px;
+    margin: 30px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #2f5d50;
+    box-shadow: 0 0 5px rgba(47, 93, 80, 0.3);
+}
+
+textarea {
+    height: 130px;
+    resize: vertical;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.modal-content {
+    background-color: white;
+    width: 100%;
+    max-width: 500px;
+    padding: 35px;
+    border-radius: 15px;
+    position: relative;
+    animation: aparecer 0.4s ease;
+}
+
+.modal-content h2 {
+    margin-top: 10px;
+}
+
+.fechar {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #555;
+}
+
+.fechar:hover {
+    color: #d4af37;
+}
+
+
+/* =========================
+   ANIMAÇÕES
+========================= */
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   BOTÃO VOLTAR AO TOPO
+========================= */
+
+#topo {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: #d4af37;
+    color: white;
+
+    font-size: 22px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    display: none;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+
+    transition: 0.3s;
+}
+
+#topo:hover {
+    transform: translateY(-5px);
+    background-color: #2f5d50;
+}
+
+
+/* =========================
+   RODAPÉ
+========================= */
+
+footer {
+    background-color: #23483d;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+footer p {
+    margin: 5px 0;
+    color: #e5e5e5;
+}
+
+
+/* =========================
+   MODO ESCURO
+========================= */
+
+body.dark {
+    background-color: #121212;
+    color: #eee;
+}
+
+body.dark main > p {
+    color: #ccc;
+}
+
+body.dark .cartao {
+    background-color: #1e1e1e;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark .cartao p {
+    color: #bbb;
+}
+
+body.dark h2,
+body.dark h3 {
+    color: #6fa996;
+}
+
+body.dark .modal-content {
+    background-color: #222;
+    color: white;
+}
+
+body.dark input,
+body.dark textarea {
+    background-color: #333;
+    color: white;
+    border-color: #555;
+}
+
+
+/* =========================
+   RESPONSIVIDADE
+========================= */
+
+@media (max-width: 900px) {
+
+    .galeria {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cartoes {
+        gap: 20px;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    main {
+        padding: 30px 15px;
+    }
+
+    h2 {
+        font-size: 26px;
+    }
+
+    .cartao {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    .galeria {
+        grid-template-columns: 1fr;
+    }
+
+    .galeria img {
+        height: 250px;
+    }
 }
